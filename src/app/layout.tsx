@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Oswald } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/Theme-provider"
 import { Backgroundtheme } from "@/components/Background-theme";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const oswald = Oswald({
+  subsets: ["latin"], // choose subsets you need
+  weight: ["400", "700"], // pick weights you want
+  variable: "--font-oswald", // optional, helps with CSS vars
+})
 
 export const metadata: Metadata = {
-  title: "RMX",
+  title: "BabyBoy",
   description: "A Convinient Web based Wallet",
 };
 
@@ -24,7 +21,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen w-full relative`}>
+        className={`${oswald.className} antialiased min-h-screen w-full relative`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
