@@ -7,9 +7,9 @@ import { Backgroundtheme } from "@/components/Background-theme";
 
 
 const oswald = Oswald({
-  subsets: ["latin"], // choose subsets you need
-  weight: ["400", "700"], // pick weights you want
-  variable: "--font-oswald", // optional, helps with CSS vars
+  subsets: ["latin"], 
+  weight: ["400", "700"], 
+  variable: "--font-oswald", 
 })
 
 export const metadata: Metadata = {
