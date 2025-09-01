@@ -1,4 +1,3 @@
-import { Heading1 } from "lucide-react"
 import { Button } from "./ui/button"
 import { Keypair } from "@solana/web3.js"
 import {

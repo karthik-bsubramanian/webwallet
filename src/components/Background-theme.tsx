@@ -9,7 +9,7 @@ export const Backgroundtheme = ({ children }: { children: React.ReactNode }) => 
 
     // Prevent hydration mismatch
     useEffect(() => setMounted(true), [])
-    if (!mounted) return <div className="min-h-screen w-full">{children}</div>
+    if (!mounted) return <div className="min-h-screen">{children}</div>
 
     const bg = theme === 'dark' ? {
         background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",

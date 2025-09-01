@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/Theme-provider"
 import { Backgroundtheme } from "@/components/Background-theme";
 import { Toaster } from "sonner";
+import { Footer } from "@/components/Footer";
 
 
 const oswald = Oswald({
@@ -33,6 +34,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             <div className="mx-90 h-full">
               <Header />
               {children}
+              <Footer/>
             </div>
           </Backgroundtheme>
         </ThemeProvider>
