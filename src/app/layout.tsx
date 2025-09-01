@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/Theme-provider"
 import { Backgroundtheme } from "@/components/Background-theme";
+import { Toaster } from "sonner";
 
 
 const oswald = Oswald({
@@ -22,6 +23,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="en">
       <body
         className={`${oswald.className} antialiased min-h-screen w-full relative`}>
+          <Toaster/>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
