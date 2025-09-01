@@ -23,12 +23,12 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="en">
       <body
         className={`${oswald.className} antialiased min-h-screen w-full relative`}>
-          <Toaster/>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           disableTransitionOnChange
-        >
+          >
+          <Toaster/>
           <Backgroundtheme>
             <div className="mx-90 h-full">
               <Header />

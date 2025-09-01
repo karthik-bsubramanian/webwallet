@@ -12,20 +12,21 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
+import { AnimatedCard } from "./AnimateCard"
 
 type addWalletProps = {
     addWallet: () => void;
     setWallets: (w: Keypair[]) => void;
 }
 export const AddWallet = ({ addWallet, setWallets }: addWalletProps) => {
-    return <div className="w-full h-20 flex justify-between my-5">
+    return<AnimatedCard> <div className="w-full h-20 flex justify-between my-5">
         <h1 className="text-3xl font-extrabold">Solana Wallet</h1>
         <div className="space-x-3">
             <Button onClick={() => addWallet()} variant="default" className="cursor-pointer">
                 Add Wallet
             </Button>
             <AlertDialog>
-                <AlertDialogTrigger>Clear Wallets</AlertDialogTrigger>
+                <AlertDialogTrigger className="cursor-pointer">Clear Wallets</AlertDialogTrigger>
                 <AlertDialogContent>
                     <AlertDialogHeader>
                         <AlertDialogTitle>Are you sure you want to delete all wallets?</AlertDialogTitle>
@@ -40,5 +41,5 @@ export const AddWallet = ({ addWallet, setWallets }: addWalletProps) => {
                 </AlertDialogContent>
             </AlertDialog>
         </div>
-    </div>
+    </div></AnimatedCard>
 }

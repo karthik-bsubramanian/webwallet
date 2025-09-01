@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Copy } from "lucide-react"
 import { toast } from "sonner"
 import { CircleCheck } from "lucide-react"
+import { AnimatedCard } from "./AnimateCard"
 
 export const SecretPhrase = () => {
     const [open,setOpen] = useState(false);
@@ -21,7 +22,7 @@ export const SecretPhrase = () => {
                 console.error(err.message);
             })
     }
-    return <>
+    return <AnimatedCard>
         <div className="h-max p-5 w-full cursor-pointer bg-gray-400/12 dark:bg-gray-50/10 px-4 rounded-md">
             <div onClick={()=>setOpen(!open)} className="justify-between flex w-full items-center pt-4">
                 <h1 className="text-4xl text-black dark:text-white">Your Secret Phrase</h1>
@@ -35,7 +36,7 @@ export const SecretPhrase = () => {
                 <h3>Click to copy</h3>
             </div>}
         </div>
-    </>
+    </AnimatedCard>
 }
 
 function Box({ string }: { string: string }) {

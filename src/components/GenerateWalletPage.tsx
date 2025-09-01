@@ -1,3 +1,4 @@
+import { AnimatedCard } from "./AnimateCard";
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 
@@ -7,7 +8,7 @@ type generateWalletProps = {
 }
 
 export const GenerateWalletPage = ({generated,addWallet}:generateWalletProps) => {
-    return <div className="flex gap-2 flex-col h-max">
+    return <AnimatedCard><div className="flex gap-2 flex-col h-max">
         <h1 className="text-6xl font-extrabold">Secret recovery phrase</h1>
         <h2 className="text-2xl font-light mb-3">Save these words in a safe place</h2>
         <div className="flex gap-4">
@@ -17,6 +18,6 @@ export const GenerateWalletPage = ({generated,addWallet}:generateWalletProps) =>
                 addWallet();
                 }} variant="default" className="cursor-pointer">Generate Wallet</Button>
         </div>
-    </div>
+    </div></AnimatedCard>
 }
 

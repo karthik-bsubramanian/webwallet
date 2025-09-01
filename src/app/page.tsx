@@ -1,11 +1,13 @@
 "use client";
 
+import { AnimatedCard } from "@/components/AnimateCard";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
   const router = useRouter();
   return (
+    <AnimatedCard>
     <div className="w-full h-[800px] flex items-center justify-center gap-4 flex-col">
       <h1 className="text-5xl font-extrabold">BabyBoy Supports Multiple Blockchains</h1>
       <h2 className="text-2xl">Chose a Chain and Get Started</h2>
@@ -14,5 +16,6 @@ export default function Home() {
         <Button variant="default" onClick={()=>router.push('/ethereum')} className="text-xl cursor-pointer">Ethereum</Button>
       </div>
     </div>
+    </AnimatedCard>
   );
 }

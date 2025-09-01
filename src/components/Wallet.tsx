@@ -2,6 +2,7 @@
 
 import { Eye, EyeClosed } from "lucide-react"
 import { useState } from "react"
+import { AnimatedCard } from "./AnimateCard";
 
 type walletProps= {
     publicKey: string;
@@ -10,7 +11,7 @@ type walletProps= {
 }
 export const Wallet = ({publicKey,privateKey,index}: walletProps) => {
     const [visible, setVisible] = useState(false);
-    return <div className="h-max w-full p-4 bg-gray-400/12 dark:bg-gray-50/10 mt-10 rounded-md">
+    return <AnimatedCard> <div className="h-max w-full p-4 bg-gray-400/12 dark:bg-gray-50/10 mt-10 rounded-md">
         <h1 className="text-4xl">Wallet {index}</h1>
         <div className="bg-gray-400/17 dark:bg-gray-50/15 mt-2 rounded-lg p-1">
 
@@ -28,5 +29,5 @@ export const Wallet = ({publicKey,privateKey,index}: walletProps) => {
                 </div>
             </div>
         </div>
-    </div>
+    </div></AnimatedCard>
 }
