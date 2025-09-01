@@ -2,8 +2,10 @@
 
 import Image from "next/image"
 import { ThemeToggle } from "./Theme-toggle"
+import { useRouter } from "next/navigation"
 
 export const Header = () => {
+    const router = useRouter();
     return <div className="h-20 w-full flex justify-between items-center">
         <div className="flex gap-2 items-center">
         <Image
@@ -12,7 +14,7 @@ export const Header = () => {
             width={40}
             height={40}
         />
-        <span className="text-2xl">BabyBoy</span>
+        <span onClick={()=>router.replace('/')} className="text-2xl cursor-pointer">BabyBoy</span>
         </div>
         <ThemeToggle/>
     </div>
