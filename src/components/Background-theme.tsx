@@ -10,25 +10,23 @@ export const Backgroundtheme = ({ children }: { children: React.ReactNode }) => 
     // Prevent hydration mismatch
     useEffect(() => setMounted(true), [])
     if (!mounted) return <div className="min-h-screen w-full">{children}</div>
-    const bg = theme === 'dark' ? {
-        backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-        `,
-        backgroundSize: "60px 60px",
-    } : {
 
+    const bg = theme === 'dark' ? {
+        background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
+    } : {
         backgroundImage: `
-        linear-gradient(to right, #e5e7eb 1px, transparent 1px),
-        linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)
-      `,
-        backgroundSize: "40px 40px",
+        radial-gradient(circle 600px at 0% 200px, #d5c5ff, transparent),
+        radial-gradient(circle 600px at 100% 200px, #d5c5ff, transparent)
+      `
     }
-    return theme === 'dark' ? <div className="min-h-screen w-full bg-black relative" style={bg}>
+    return theme === 'dark' ? <div className="min-h-screen w-full relative">
+        <div className="absolute inset-0 z-0" style={bg}>
         {children}
-    </div> : <div className="min-h-screen w-full bg-white relative" style={bg}>
-        {children}
+        </div>
+    </div> : <div className="min-h-screen w-full bg-white relative">
+        <div className="absolute inset-0 z-0" style={bg}>
+            {children}
+        </div>
     </div>
 }
-
 
